@@ -129,7 +129,6 @@ void encrypt(char word[])
 			}
 		}
 	}
-	printf("encrypted word: %s\n", word);
 }
 
 int main(void)
@@ -170,7 +169,7 @@ int main(void)
 		// Loop a maximum of three times for a client to be authenticated
 		int numTries = 0;
 		bool authenticated = false;
-		char* unencrypted_username;
+		char user[51];
 		while (numTries < 3){
 			// Receive credentials line
 			r = recv(clntsock, buf, sizeof(buf), 0);
@@ -180,6 +179,7 @@ int main(void)
 			}
 
 			// Split the string for username and password
+			char* unencrypted_username;
 			char* unencrypted_password;
 			char credentials_buf[102];
 			char* token;
@@ -188,6 +188,8 @@ int main(void)
 			unencrypted_username = token;
 			token = strtok(NULL, ",");
 			unencrypted_password = token;
+			strcpy(user, unencrypted_username);
+			user[strlen(unencrypted_username)] = '\0';
 			printf("The main server received the authentication for %s using TCP over port %d\n", unencrypted_username, SERVM_TCP_PORT);
 
 			// Encrypt the username and password
@@ -259,7 +261,7 @@ int main(void)
 				code = token;
 				token = strtok(NULL, ",");
 				category = token;
-				printf("The main server received from %s to query course %s about %s using TCP over port %d.\n", unencrypted_username, code, category, SERVM_TCP_PORT);
+				printf("The main server received from %s to query course %s about %s using TCP over port %d.\n", user, code, category, SERVM_TCP_PORT);
 
 				/*
 				 *  Send query to respective server
