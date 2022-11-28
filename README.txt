@@ -23,8 +23,9 @@ e. Format of messages
 	In these cases I use similar messages at my own discretion.
 
 g. Any idiosyncrasy
-	I expect my code to work without errors. However, as a mac m1 user I could only test this on AWS with Ubuntu 18.04
-	as AWS did not offer 16.04. Based off what TA's have told me, there shouldn't be an issue but I haven't been able to test it.
+	I expect my code to work without errors. As a Mac M1 user, I completed this project on AWS with Ubuntu 18.04.
+	I have been told by a TA that for people who need AWS, they will be tested with 18.04 instead of 16.04 as
+	AWS no longer provides 16.04.
 
 h. Reused code
 	The majority of the socket boilerplate code was adapted from the lecture notes
