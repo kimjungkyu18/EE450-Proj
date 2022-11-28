@@ -29,6 +29,6 @@ g. Any idiosyncrasy
 
 h. Reused code
 	The majority of the socket boilerplate code was either adapted from the lecture notes
-	of a previous undergraduate course I took or adapted Beej. The source is cited in comments.
+	of a previous undergraduate course I took or adapted from Beej. The source is cited in comments.
 	Additionally there are multiple code snippets that are adapted from websites
 	like stackoverflow, geeksforgeeks, etc. Those are also cited in the comments.
